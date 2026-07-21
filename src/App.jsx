@@ -8,8 +8,7 @@ export default function App() {
   return (
     <main className="page">
       <header className="masthead">
-        <h1>GTE Complaint Hotline</h1>
-        <p className="subtitle">Official Grievance Intake Portal</p>
+        <h1>Official GTE Grievance Intake Portal</h1>
       </header>
 
       <div className="meme-wrap">
