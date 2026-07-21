@@ -3,7 +3,7 @@ import RickRoll from './RickRoll.jsx'
 import twoButtons from './assets/two-buttons.png'
 
 export default function App() {
-  const [submitted, setSubmitted] = useState(false)
+  const [videoId, setVideoId] = useState(null)
 
   return (
     <main className="page">
@@ -21,16 +21,16 @@ export default function App() {
         <button
           className="hotspot"
           style={{ left: '4%', top: '6%', width: '40%', height: '32%' }}
-          onClick={() => setSubmitted(true)}
+          onClick={() => setVideoId('dQw4w9WgXcQ')}
           aria-label="File Complaint"
         />
         <button
           className="hotspot"
           style={{ left: '44%', top: '5%', width: '42%', height: '31%' }}
-          onClick={() => setSubmitted(true)}
+          onClick={() => setVideoId('XXYlFuWEuKI')}
           aria-label="Send Text"
         />
-        {submitted && <RickRoll />}
+        {videoId && <RickRoll videoId={videoId} />}
       </div>
 
       <footer className="fine-print">
