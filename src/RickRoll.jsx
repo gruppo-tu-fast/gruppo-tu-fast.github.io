@@ -1,6 +1,6 @@
 export default function RickRoll() {
   return (
-    <main className="rickroll">
+    <div className="rickroll">
       <p className="escalation">
         Your complaint has been escalated to our senior grievance officer:
       </p>
@@ -12,6 +12,6 @@ export default function RickRoll() {
           allowFullScreen
         />
       </div>
-    </main>
+    </div>
   )
 }

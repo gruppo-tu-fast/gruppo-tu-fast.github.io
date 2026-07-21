@@ -5,10 +5,6 @@ import twoButtons from './assets/two-buttons.png'
 export default function App() {
   const [submitted, setSubmitted] = useState(false)
 
-  if (submitted) {
-    return <RickRoll />
-  }
-
   return (
     <main className="page">
       <header className="masthead">
@@ -36,6 +32,8 @@ export default function App() {
           aria-label="Send Text"
         />
       </div>
+
+      {submitted && <RickRoll />}
 
       <footer className="fine-print">
         Complaints are processed in the order they are ignored. GTE assumes no
