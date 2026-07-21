@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: #edeae3;
+  color: #24211c;
+  font-family: Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.masthead {
+  text-align: center;
+  border-bottom: 3px double #24211c;
+  padding-bottom: 0.75rem;
+}
+
+.masthead h1 {
+  font-size: clamp(1.6rem, 7vw, 2.2rem);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin-top: 0.25rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #5a544a;
+}
+
+.meme-wrap {
+  position: relative;
+  line-height: 0;
+  border: 1px solid #b8b2a6;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.meme {
+  width: 100%;
+  height: auto;
+}
+
+.hotspot {
+  position: absolute;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fine-print {
+  font-size: 0.72rem;
+  color: #6d675c;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* rickroll screen */
+.rickroll {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #111;
+  color: #f2efe8;
+}
+
+.escalation {
+  text-align: center;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
