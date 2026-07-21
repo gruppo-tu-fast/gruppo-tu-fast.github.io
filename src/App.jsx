@@ -8,7 +8,7 @@ export default function App() {
   return (
     <main className="page">
       <header className="masthead">
-        <h1>Official GTE Grievance Intake Portal</h1>
+        <h1>GTE Grievance Portal</h1>
       </header>
 
       <div className="meme-wrap">
@@ -30,7 +30,7 @@ export default function App() {
           onClick={() => setVideo({ src: '/tears.mp4' })}
           aria-label="Send Text"
         />
-        {video && <RickRoll {...video} />}
+        {video && <RickRoll {...video} onClose={() => setVideo(null)} />}
       </div>
 
       <footer className="fine-print">

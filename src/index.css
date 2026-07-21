@@ -35,8 +35,9 @@ body {
 .masthead h1 {
   font-family: 'Permanent Marker', 'Comic Sans MS', cursive;
   font-weight: 400;
-  font-size: clamp(1.5rem, 6.5vw, 2.1rem);
+  font-size: clamp(1.2rem, 5.5vw, 1.7rem);
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .meme-wrap {
@@ -49,8 +50,8 @@ body {
   /* keep the whole 500x757 meme visible below the masthead on phone
      screens: budget ~12rem for header/footer/padding and convert the
      remaining height into a width cap via the image's aspect ratio */
-  max-width: min(100%, calc((100vh - 14.5rem) * 500 / 757));
-  max-width: min(100%, calc((100svh - 14.5rem) * 500 / 757));
+  max-width: min(100%, calc((100vh - 12.5rem) * 500 / 757));
+  max-width: min(100%, calc((100svh - 12.5rem) * 500 / 757));
 }
 
 .meme {
@@ -67,7 +68,7 @@ body {
 }
 
 .fine-print {
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   color: #6d675c;
   text-align: center;
   line-height: 1.5;
@@ -87,6 +88,14 @@ body {
   background: rgba(10, 8, 6, 0.72);
   color: #f2efe8;
   animation: rickroll-fade 1.2s ease both;
+  cursor: pointer;
+}
+
+.dismiss-hint {
+  text-align: center;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: rgba(242, 239, 232, 0.7);
 }
 
 @keyframes rickroll-fade {
