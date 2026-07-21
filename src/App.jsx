@@ -30,9 +30,8 @@ export default function App() {
           onClick={() => setSubmitted(true)}
           aria-label="Send Text"
         />
+        {submitted && <RickRoll />}
       </div>
-
-      {submitted && <RickRoll />}
 
       <footer className="fine-print">
         Complaints are processed in the order they are ignored. GTE assumes no
