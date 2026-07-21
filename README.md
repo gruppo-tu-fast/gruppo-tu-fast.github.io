@@ -4,7 +4,7 @@ Official Grievance Intake Portal of the GTE cycling group. Riders may file a
 complaint or send a text. Both paths receive the same world-class support
 experience.
 
-Live site: https://gruppo-tu-slow.github.io/complaint-hotline/
+Live site: https://gruppo-tu-slow.github.io/
 
 ## Development
 

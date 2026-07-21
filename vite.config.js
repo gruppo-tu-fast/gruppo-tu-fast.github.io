@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// base must match the GitHub repo name for GitHub Pages project sites
+// org root site (gruppo-tu-slow.github.io) serves from /
 export default defineConfig({
-  base: '/complaint-hotline/',
+  base: '/',
   plugins: [react()],
 })

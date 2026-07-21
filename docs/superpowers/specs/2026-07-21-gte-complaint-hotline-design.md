@@ -24,8 +24,9 @@ are always complaining. The page is a joke: filing a complaint rickrolls you.
 
 ## Architecture
 
-- Vite + React SPA, `base: '/complaint-hotline/'` for the GitHub Pages subpath
-  (repo: `gruppo-tu-slow/complaint-hotline`).
+- Vite + React SPA, `base: '/'` — deployed as the org root site
+  (repo: `gruppo-tu-slow/gruppo-tu-slow.github.io`, served at
+  https://gruppo-tu-slow.github.io/).
 - `App.jsx` — title, meme image with two percentage-positioned invisible
   hotspot buttons, and a `submitted` boolean; when true, renders `RickRoll`.
 - `RickRoll.jsx` — full-viewport YouTube iframe embed
