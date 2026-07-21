@@ -3,7 +3,7 @@ import RickRoll from './RickRoll.jsx'
 import twoButtons from './assets/two-buttons.png'
 
 export default function App() {
-  const [videoId, setVideoId] = useState(null)
+  const [video, setVideo] = useState(null)
 
   return (
     <main className="page">
@@ -21,16 +21,16 @@ export default function App() {
         <button
           className="hotspot"
           style={{ left: '4%', top: '6%', width: '40%', height: '32%' }}
-          onClick={() => setVideoId('dQw4w9WgXcQ')}
+          onClick={() => setVideo({ src: '/rick.mp4' })}
           aria-label="File Complaint"
         />
         <button
           className="hotspot"
           style={{ left: '44%', top: '5%', width: '42%', height: '31%' }}
-          onClick={() => setVideoId('XXYlFuWEuKI')}
+          onClick={() => setVideo({ src: '/tears.mp4' })}
           aria-label="Send Text"
         />
-        {videoId && <RickRoll videoId={videoId} />}
+        {video && <RickRoll {...video} />}
       </div>
 
       <footer className="fine-print">
