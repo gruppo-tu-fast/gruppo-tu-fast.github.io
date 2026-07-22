@@ -17,13 +17,25 @@ function RedButton({ variant, label, showHint, onPress }) {
   )
 }
 
+// Long Pull @ 22 rotates through these on every press. Add more videos here
+// and the rotation grows automatically.
+const LONG_PULL_VIDEOS = ['/chase.mp4', '/cortado-coffee-shop.mp4', '/tears.mp4']
+
 export default function App() {
   const [video, setVideo] = useState(null)
   const [pressed, setPressed] = useState(false)
+  const [longPullIndex, setLongPullIndex] = useState(() =>
+    Math.floor(Math.random() * LONG_PULL_VIDEOS.length)
+  )
 
   const press = (src) => {
     setPressed(true)
     setVideo({ src })
+  }
+
+  const pressLongPull = () => {
+    press(LONG_PULL_VIDEOS[longPullIndex])
+    setLongPullIndex((i) => (i + 1) % LONG_PULL_VIDEOS.length)
   }
 
   return (
@@ -42,9 +54,9 @@ export default function App() {
         />
         <RedButton
           variant="text"
-          label="Send Text"
+          label="Long Pull @ 22"
           showHint={!pressed}
-          onPress={() => press('/chase.mp4')}
+          onPress={pressLongPull}
         />
         <div className="watermark">Gruppo tu Fast</div>
         {video && <RickRoll {...video} onClose={() => setVideo(null)} />}
