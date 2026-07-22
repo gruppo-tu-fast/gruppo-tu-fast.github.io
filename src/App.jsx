@@ -28,10 +28,6 @@ export default function App() {
 
   return (
     <main className="page">
-      <header className="masthead">
-        <h1>GTE Grievance Portal</h1>
-      </header>
-
       <div className="meme-wrap">
         <img
           src={twoButtons}
@@ -42,13 +38,13 @@ export default function App() {
           variant="file"
           label="File Complaint"
           showHint={!pressed}
-          onPress={() => press('/rick.mp4')}
+          onPress={() => press('/chase.mp4')}
         />
         <RedButton
           variant="text"
           label="Send Text"
           showHint={!pressed}
-          onPress={() => press('/tears.mp4')}
+          onPress={() => press('/chase.mp4')}
         />
         <div className="watermark">Gruppo tu Fast</div>
         {video && <RickRoll {...video} onClose={() => setVideo(null)} />}

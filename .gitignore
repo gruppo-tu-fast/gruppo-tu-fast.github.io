@@ -2,3 +2,7 @@ node_modules
 dist
 .DS_Store
 *.local
+
+# local source material, not for the repo (the 285MB original stays out)
+/chase.mp4
+/gte-design.zip

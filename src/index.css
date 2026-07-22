@@ -26,20 +26,6 @@ body {
   gap: 1rem;
 }
 
-.masthead {
-  text-align: center;
-  border-bottom: 3px double #24211c;
-  padding-bottom: 0.75rem;
-}
-
-.masthead h1 {
-  font-family: 'Permanent Marker', 'Comic Sans MS', cursive;
-  font-weight: 400;
-  font-size: clamp(1.2rem, 5.5vw, 1.7rem);
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-
 .meme-wrap {
   position: relative;
   container-type: inline-size; /* lets the watermark font scale with the image via cqw */
@@ -48,11 +34,11 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
   align-self: center;
   width: 100%;
-  /* keep the whole 500x757 meme visible below the masthead on phone
-     screens: budget ~12rem for header/footer/padding and convert the
-     remaining height into a width cap via the image's aspect ratio */
-  max-width: min(100%, calc((100vh - 12.5rem) * 500 / 757));
-  max-width: min(100%, calc((100svh - 12.5rem) * 500 / 757));
+  /* keep the whole 500x757 meme visible on phone screens: budget
+     ~8.5rem for footer/padding and convert the remaining height into
+     a width cap via the image's aspect ratio */
+  max-width: min(100%, calc((100vh - 8.5rem) * 500 / 757));
+  max-width: min(100%, calc((100svh - 8.5rem) * 500 / 757));
 }
 
 .meme {
