@@ -1,13 +1,30 @@
 import { useState } from 'react'
 import RickRoll from './RickRoll.jsx'
 import twoButtons from './assets/two-buttons.png'
-import twoButtonsPulse from './assets/two-buttons-pulse.gif'
+
+function RedButton({ variant, label, showHint, onPress }) {
+  return (
+    <button
+      className={`meme-btn meme-btn--${variant}`}
+      aria-label={label}
+      onClick={onPress}
+    >
+      {showHint && <span className="btn-hint" />}
+      <span className="btn-base" />
+      <span className="btn-cap" />
+      <span className="btn-shine" />
+    </button>
+  )
+}
 
 export default function App() {
   const [video, setVideo] = useState(null)
-  const [prefersReducedMotion] = useState(
-    () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  )
+  const [pressed, setPressed] = useState(false)
+
+  const press = (src) => {
+    setPressed(true)
+    setVideo({ src })
+  }
 
   return (
     <main className="page">
@@ -17,23 +34,23 @@ export default function App() {
 
       <div className="meme-wrap">
         <img
-          src={prefersReducedMotion ? twoButtons : twoButtonsPulse}
-          alt="Two buttons meme: a sweating man agonizes between pressing File Complaint and Send Text"
+          src={twoButtons}
+          alt="Two buttons meme: a sweating man agonizes between pressing File Complaint and Long Pull @ 22"
           className="meme"
         />
-        {/* invisible tap targets over the two red buttons */}
-        <button
-          className="hotspot"
-          style={{ left: '4%', top: '6%', width: '40%', height: '32%' }}
-          onClick={() => setVideo({ src: '/rick.mp4' })}
-          aria-label="File Complaint"
+        <RedButton
+          variant="file"
+          label="File Complaint"
+          showHint={!pressed}
+          onPress={() => press('/rick.mp4')}
         />
-        <button
-          className="hotspot"
-          style={{ left: '44%', top: '5%', width: '42%', height: '31%' }}
-          onClick={() => setVideo({ src: '/tears.mp4' })}
-          aria-label="Send Text"
+        <RedButton
+          variant="text"
+          label="Send Text"
+          showHint={!pressed}
+          onPress={() => press('/tears.mp4')}
         />
+        <div className="watermark">Gruppo tu Fast</div>
         {video && <RickRoll {...video} onClose={() => setVideo(null)} />}
       </div>
 
