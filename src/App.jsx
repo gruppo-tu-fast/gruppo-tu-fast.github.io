@@ -1,9 +1,13 @@
 import { useState } from 'react'
 import RickRoll from './RickRoll.jsx'
 import twoButtons from './assets/two-buttons.png'
+import twoButtonsPulse from './assets/two-buttons-pulse.gif'
 
 export default function App() {
   const [video, setVideo] = useState(null)
+  const [prefersReducedMotion] = useState(
+    () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  )
 
   return (
     <main className="page">
@@ -13,7 +17,7 @@ export default function App() {
 
       <div className="meme-wrap">
         <img
-          src={twoButtons}
+          src={prefersReducedMotion ? twoButtons : twoButtonsPulse}
           alt="Two buttons meme: a sweating man agonizes between pressing File Complaint and Send Text"
           className="meme"
         />
