@@ -19,7 +19,7 @@ function RedButton({ variant, label, showHint, onPress }) {
 
 // Long Pull @ 22 rotates through these on every press. Add more videos here
 // and the rotation grows automatically.
-const LONG_PULL_VIDEOS = ['/chase.mp4', '/cortado-coffee-shop.mp4']
+const LONG_PULL_VIDEOS = ['/chase.mp4', '/cortado-coffee-shop.mp4', '/tears.mp4']
 
 export default function App() {
   const [video, setVideo] = useState(null)
